@@ -25,7 +25,7 @@ const config: {
 
 export default function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-ink-950">
+    <div className="min-h-screen overflow-x-clip bg-ink-950">
       <Header />
       <Hero variant={config.heroVariant} />
       <Stats />

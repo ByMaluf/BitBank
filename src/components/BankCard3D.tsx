@@ -131,7 +131,7 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
                   </div>
                 </div>
               </div>
-              <img src="/assets/logo-marca.svg" alt="" className="size-[30px] opacity-95" />
+              <img src="/assets/mastercard.png" alt="Mastercard" className="h-9 w-auto opacity-95" />
             </div>
           </div>
 

@@ -48,5 +48,8 @@ desktop.ini
 .vercel
 .turbo
 
+# TypeScript
+*.tsbuildinfo
+
 # Diversos
 *.local

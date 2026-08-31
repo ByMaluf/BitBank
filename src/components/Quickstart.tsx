@@ -5,7 +5,7 @@ export default function Quickstart() {
   return (
     <section id="docs" className="border-b border-line bg-ink-900">
       <div className="mx-auto max-w-[1200px] px-8 py-24">
-        <Reveal className="mb-13 max-w-[620px]">
+        <Reveal easing="ease" className="mb-13 max-w-[620px]">
           <div className="mb-4.5 font-mono text-xs tracking-[0.12em] text-gold">OS PRIMEIROS 4 MINUTOS</div>
           <h2 className="mb-4 text-[44px] leading-[1.06] font-bold tracking-[-0.03em]">
             Do zero ao primeiro PIX em 3 passos.
@@ -17,7 +17,7 @@ export default function Quickstart() {
         </Reveal>
         <div className="grid gap-px overflow-hidden rounded-[14px] border border-line bg-line md:grid-cols-3">
           {steps.map((s, i) => (
-            <Reveal key={s.n} delay={i * 70}>
+            <Reveal key={s.n} delay={i * 70} duration={600} easing="ease">
               <div className="h-full bg-ink-800 p-8">
                 <div className="mb-4.5 font-mono text-[11px] text-gold">{s.n}</div>
                 <h3 className="mb-2.5 text-[19px] font-semibold">{s.title}</h3>

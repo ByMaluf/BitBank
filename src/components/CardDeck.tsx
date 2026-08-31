@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BankCard3D, { type CardVariant } from "./BankCard3D";
 
 const ORDER: { id: number; variant: CardVariant }[] = [
@@ -38,29 +38,40 @@ export const ACTIVE_INFO: Record<number, ActiveInfo> = {
 export default function CardDeck({ onChange }: { onChange?: (frente: number) => void }) {
   const [frente, setFrente] = useState(0);
   const rolando = useRef(false);
+  const deckRef = useRef<HTMLDivElement>(null);
+  const frenteRef = useRef(frente);
+  frenteRef.current = frente;
 
   const irPara = (id: number) => {
-    if (id === frente) return;
+    if (id === frenteRef.current) return;
     setFrente(id);
     onChange?.(id);
   };
 
-  const onWheel: React.WheelEventHandler<HTMLDivElement> = (e) => {
-    e.preventDefault();
-    if (rolando.current) return;
-    rolando.current = true;
-    const ids = ORDER.map((o) => o.id);
-    const pos = ids.indexOf(frente);
-    const prox = e.deltaY > 0 ? (pos + 1) % ids.length : (pos - 1 + ids.length) % ids.length;
-    irPara(ids[prox]);
-    setTimeout(() => {
-      rolando.current = false;
-    }, 550);
-  };
+  // Listener nativo com passive:false: o onWheel sintético do React é passivo
+  // por padrão, então preventDefault() dentro dele não bloqueia o scroll da página.
+  useEffect(() => {
+    const deck = deckRef.current;
+    if (!deck) return;
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (rolando.current) return;
+      rolando.current = true;
+      const ids = ORDER.map((o) => o.id);
+      const pos = ids.indexOf(frenteRef.current);
+      const prox = e.deltaY > 0 ? (pos + 1) % ids.length : (pos - 1 + ids.length) % ids.length;
+      irPara(ids[prox]);
+      setTimeout(() => {
+        rolando.current = false;
+      }, 550);
+    };
+    deck.addEventListener("wheel", onWheel, { passive: false });
+    return () => deck.removeEventListener("wheel", onWheel);
+  }, []);
 
   return (
     <div className="flex flex-col items-center gap-4 px-2 pt-2 pb-3 [perspective:1700px]">
-      <div onWheel={onWheel} className="relative mb-14 w-full max-w-[448px] [aspect-ratio:1.586]">
+      <div ref={deckRef} className="relative mb-14 w-full max-w-[448px] [aspect-ratio:1.586]">
         {ORDER.map(({ id, variant }) => {
           const pos = id === frente ? 0 : 1;
           const style =
@@ -75,7 +86,16 @@ export default function CardDeck({ onChange }: { onChange?: (frente: number) => 
           return (
             <div
               key={id}
-              onClick={() => irPara(id)}
+              onClickCapture={(e) => {
+                // Cartão de trás: intercepta na fase de captura, antes que o
+                // clique alcance o próprio onClick de flip do BankCard3D — só
+                // traz pra frente, não vira. O da frente recebe o clique
+                // normalmente (bubble) e vira, sem passar por aqui.
+                if (id !== frente) {
+                  e.stopPropagation();
+                  irPara(id);
+                }
+              }}
               className="absolute inset-0 origin-bottom transition-[transform,filter] duration-500 ease-[cubic-bezier(.22,.7,.2,1)]"
               style={style as React.CSSProperties}
             >

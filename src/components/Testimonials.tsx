@@ -13,7 +13,7 @@ export default function Testimonials() {
         </Reveal>
         <div className="grid gap-5 md:grid-cols-3">
           {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 70}>
+            <Reveal key={t.name} delay={i * 70} duration={600} easing="ease">
               <div className="h-full rounded-[14px] border border-line bg-ink-800 p-7">
                 <p className="mb-6 text-[16.5px] leading-[1.6] text-cream-2">{t.quote}</p>
                 <div className="flex items-center gap-3">

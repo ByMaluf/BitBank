@@ -11,7 +11,7 @@ export default function Waitlist() {
       className="border-b border-line bg-[radial-gradient(700px_300px_at_50%_110%,rgba(245,197,66,0.10),transparent_70%)]"
     >
       <div className="mx-auto max-w-[700px] px-8 py-26 text-center">
-        <Reveal>
+        <Reveal easing="ease">
           <h2 className="mb-4.5 text-[48px] leading-[1.04] font-bold tracking-[-0.035em]">
             Seu banco, <span className="text-gold">seu código.</span>
           </h2>

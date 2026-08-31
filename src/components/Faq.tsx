@@ -12,7 +12,7 @@ export default function Faq() {
   return (
     <section id="faq" className="border-b border-line">
       <div className="mx-auto grid max-w-[1200px] gap-16 px-8 py-24 lg:grid-cols-[0.8fr_1.2fr]">
-        <Reveal>
+        <Reveal easing="ease">
           <div className="mb-4.5 font-mono text-xs tracking-[0.12em] text-gold">DÚVIDAS HONESTAS</div>
           <h2 className="mb-4 text-[40px] leading-[1.06] font-bold tracking-[-0.03em]">
             Perguntas diretas, respostas diretas.
@@ -22,7 +22,7 @@ export default function Faq() {
             horas úteis.
           </p>
         </Reveal>
-        <Reveal delay={80} className="grid gap-px border-y border-line bg-line">
+        <Reveal delay={80} easing="ease" className="grid gap-px border-y border-line bg-line">
           {faq.map((item) => (
             <details key={item.q} className="bg-ink-950 px-1 py-5">
               <summary className="flex items-center justify-between gap-6 text-[17px] font-medium text-cream">
