@@ -1,5 +1,5 @@
-import Reveal from "./Reveal";
-import { testimonials } from "../content";
+import Reveal from "@/components/ui/Reveal";
+import { testimonials } from "./content";
 
 export default function Testimonials() {
   return (

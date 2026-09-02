@@ -1,5 +1,5 @@
-import Reveal from "./Reveal";
-import { requestSnippet, responseSnippet } from "../content";
+import Reveal from "@/components/ui/Reveal";
+import { requestSnippet, responseSnippet } from "./content";
 
 const bullets = [
   "Chaves separadas por ambiente",

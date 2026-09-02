@@ -1,5 +1,5 @@
-import Reveal from "./Reveal";
-import { steps } from "../content";
+import Reveal from "@/components/ui/Reveal";
+import { steps } from "./content";
 
 export default function Quickstart() {
   return (

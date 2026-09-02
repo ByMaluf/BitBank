@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+import Reveal from "@/components/ui/Reveal";
 import Terminal from "./Terminal";
 
 export type HeroVariant = "split" | "centered";
@@ -35,7 +35,7 @@ const Title = ({ className }: { className: string }) => (
   </h1>
 );
 
-const HERO_BG = "/assets/hero-cartoes-bg.jpg";
+const HERO_BG = "/assets/hero-cartoes-bg3x.png";
 
 export default function Hero({ variant = "split" }: { variant?: HeroVariant }) {
   if (variant === "centered") {
@@ -45,7 +45,7 @@ export default function Hero({ variant = "split" }: { variant?: HeroVariant }) {
         className="relative z-0 border-b border-line bg-ink-950 bg-cover bg-[position:center,center,30%] bg-no-repeat pt-[84px]"
         style={{
           backgroundImage: `radial-gradient(700px 320px at 50% -10%, rgba(245,197,66,0.12), transparent 70%), linear-gradient(180deg, rgba(10,9,8,0.72) 0%, rgba(10,9,8,0.66) 30%, rgba(10,9,8,0.38) 62%, #0A0908 100%), url('${HERO_BG}')`,
-          backgroundSize: "auto, auto, 115%",
+          backgroundSize: "auto, auto, min(1254px, 115%)",
         }}
       >
         <div className="mx-auto max-w-[900px] px-8 pt-[120px] text-center">
@@ -81,9 +81,9 @@ export default function Hero({ variant = "split" }: { variant?: HeroVariant }) {
       id="topo"
       className="relative z-0 border-b border-line bg-ink-950 bg-no-repeat pt-[84px]"
       style={{
-        backgroundImage: `radial-gradient(900px 380px at 78% -8%, rgba(245,197,66,0.10), transparent 70%), linear-gradient(180deg, rgba(10,9,8,0) 45%, rgba(10,9,8,0.55) 80%, #0A0908 100%), linear-gradient(96deg, rgba(10,9,8,0.9) 0%, rgba(10,9,8,0.8) 36%, rgba(10,9,8,0.42) 58%, rgba(10,9,8,0.14) 100%), url('${HERO_BG}')`,
-        backgroundSize: "auto, auto, auto, 115%",
-        backgroundPosition: "center, center, center, center right",
+        backgroundImage: `radial-gradient(900px 380px at 50% -8%, rgba(245,197,66,0.10), transparent 70%), linear-gradient(180deg, rgba(10,9,8,0) 45%, rgba(10,9,8,0.55) 80%, #0A0908 100%), linear-gradient(90deg, rgba(10,9,8,0.82) 0%, rgba(10,9,8,0.3) 50%, rgba(10,9,8,0.82) 100%), url('${HERO_BG}')`,
+        backgroundSize: "auto, auto, auto, 100%",
+        backgroundPosition: "center, center, center, center",
       }}
     >
       <div className="mx-auto grid max-w-[1200px] items-center gap-16 px-8 pt-[104px] pb-24 lg:grid-cols-[1.05fr_1fr]">

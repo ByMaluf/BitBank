@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Reveal from "./Reveal";
-import { plans } from "../content";
+import Reveal from "@/components/ui/Reveal";
+import { plans } from "./content";
 
 type Cycle = "monthly" | "annual";
 

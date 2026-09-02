@@ -1,5 +1,5 @@
-import Reveal from "./Reveal";
-import { faq } from "../content";
+import Reveal from "@/components/ui/Reveal";
+import { faq } from "./content";
 
 const Plus = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5C542" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

@@ -5,7 +5,6 @@ Porte da landing page `BitBank Landing.dc.html` para React 19 + TypeScript + Tai
 ## Rodar
 
 ```bash
-cd react-ts
 npm install
 npm run dev
 ```
@@ -14,18 +13,30 @@ Build de produção: `npm run build` · type-check incluso no build (`tsc -b`).
 
 ## Estrutura
 
+Cada componente vive na própria pasta, com o conteúdo (copy/dados) que só ele usa colocado ao lado. Imports usam o alias `@/` (ex.: `@/components/ui/Reveal`), configurado em `tsconfig.json` e `vite.config.ts`.
+
 ```
 src/
-  App.tsx                  # composição das seções + config (equivalente aos tweaks)
-  content.ts               # todo o conteúdo e tipos (copy, planos, FAQ, features…)
-  index.css                # Tailwind v4 + tokens em @theme + keyframes
+  App.tsx                    # composição das seções + config (equivalente aos tweaks)
+  index.css                  # Tailwind v4 + tokens em @theme + keyframes
   components/
-    Header.tsx  Hero.tsx  Stats.tsx  Cashback.tsx  Features.tsx
-    ApiSection.tsx  Pricing.tsx  Testimonials.tsx  Quickstart.tsx
-    Faq.tsx  Waitlist.tsx  Footer.tsx
-    Reveal.tsx             # entrada ao rolar (IntersectionObserver, fail-open)
-    Terminal.tsx           # terminal com datilografia (um único loop de rAF)
-    BankCard3D.tsx         # cartão 3D: inclina no ponteiro, vira no clique
+    ui/
+      Reveal/                # entrada ao rolar (IntersectionObserver, fail-open)
+    layout/
+      Header/
+      Footer/                # + content.ts (colunas do rodapé)
+    sections/                # blocos da página, na ordem em que aparecem
+      Hero/                  # + Terminal.tsx (datilografia) + content.ts
+      Stats/                 # + content.ts
+      Cashback/              # + CardDeck.tsx + BankCard3D.tsx (cartão 3D)
+      FounderLetter/
+      Features/              # + content.ts
+      ApiSection/            # + content.ts
+      Pricing/               # + content.ts
+      Testimonials/          # + content.ts
+      Quickstart/            # + content.ts
+      Faq/                   # + content.ts
+      Waitlist/
 ```
 
 ## Tokens de tema

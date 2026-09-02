@@ -1,4 +1,4 @@
-import { footerColumns } from "../content";
+import { footerColumns } from "./content";
 
 export default function Footer() {
   return (

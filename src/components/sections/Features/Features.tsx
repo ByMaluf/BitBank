@@ -1,5 +1,5 @@
-import Reveal from "./Reveal";
-import { features } from "../content";
+import Reveal from "@/components/ui/Reveal";
+import { features } from "./content";
 
 export default function Features() {
   return (

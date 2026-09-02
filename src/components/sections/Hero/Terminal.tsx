@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { terminalLines } from "../content";
+import { terminalLines } from "./content";
 
 const CHAR_MS = 22;
 const OUT_MS = 420;

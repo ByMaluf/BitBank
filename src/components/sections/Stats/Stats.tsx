@@ -1,5 +1,5 @@
-import Reveal from "./Reveal";
-import { stats } from "../content";
+import Reveal from "@/components/ui/Reveal";
+import { stats } from "./content";
 
 export default function Stats() {
   return (

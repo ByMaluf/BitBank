@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Reveal from "./Reveal";
+import Reveal from "@/components/ui/Reveal";
 import CardDeck, { ACTIVE_INFO } from "./CardDeck";
 
 type ProviderRate = "padrao" | "bonus";

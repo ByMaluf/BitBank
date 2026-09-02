@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Reveal from "./Reveal";
+import Reveal from "@/components/ui/Reveal";
 
 export default function Waitlist() {
   const [email, setEmail] = useState("");
