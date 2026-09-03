@@ -52,9 +52,9 @@ export default function Cashback() {
         <div
           className="absolute inset-0 transition-opacity duration-[1200ms] ease-in-out"
           style={{
-            opacity: frente === 1 ? 0.75 : 0,
+            opacity: frente === 1 ? 0.28 : 0,
             backgroundImage:
-              "radial-gradient(900px 460px at 82% 8%, rgba(245,197,66,0.4), transparent 68%), radial-gradient(900px 460px at 18% 92%, rgba(245,197,66,0.28), transparent 68%)",
+              "radial-gradient(900px 460px at 82% 8%, rgba(245,197,66,0.4), transparent 68%), radial-gradient(900px 460px at 18% 92%, rgba(245,197,66,0.28), transparent 68%), radial-gradient(900px 460px at 18% 8%, rgba(245,197,66,0.32), transparent 68%), radial-gradient(900px 460px at 82% 92%, rgba(245,197,66,0.24), transparent 68%)",
           }}
         />
         <div
@@ -62,7 +62,7 @@ export default function Cashback() {
           style={{
             opacity: frente === 1 ? 0 : 0.75,
             backgroundImage:
-              "radial-gradient(900px 460px at 82% 8%, rgba(200,208,217,0.4), transparent 68%), radial-gradient(900px 460px at 18% 92%, rgba(200,208,217,0.28), transparent 68%)",
+              "radial-gradient(900px 460px at 82% 8%, rgba(200,208,217,0.4), transparent 68%), radial-gradient(900px 460px at 18% 92%, rgba(200,208,217,0.28), transparent 68%), radial-gradient(900px 460px at 18% 8%, rgba(200,208,217,0.32), transparent 68%), radial-gradient(900px 460px at 82% 92%, rgba(200,208,217,0.24), transparent 68%)",
           }}
         />
       </div>
@@ -98,12 +98,15 @@ export default function Cashback() {
         </div>
 
         <Reveal delay={150} easing="ease">
-          <div className="mb-2.5 ml-0.5 font-mono text-[11px] tracking-[0.1em] text-mute-3">
+          <div className="mb-2.5 ml-0.5 font-mono text-[11px] tracking-[0.1em] text-mute">
             CASHBACK POR PROVEDOR DE NUVEM
           </div>
           <div className="grid grid-cols-2 gap-2.5 md:grid-cols-4">
             {providers.map((p, i) => (
-              <div key={i} className="rounded-[10px] border border-line bg-ink-800 px-5 py-4.5">
+              <div
+                key={i}
+                className="rounded-[10px] border border-white/10 bg-white/5 px-5 py-4.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md"
+              >
                 <div className="text-2xl font-bold tracking-[-0.02em] transition-colors" style={{ color: acento }}>
                   {p.key === "padrao" ? info.taxaPadrao : info.taxaBonus}
                 </div>
