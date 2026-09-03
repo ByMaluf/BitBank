@@ -1,6 +1,11 @@
+import { useMemo } from "react";
 import Reveal from "@/components/ui/Reveal";
+import CountUp, { shuffledDelays } from "@/components/ui/CountUp";
+import LiveCountUp from "@/components/ui/LiveCountUp";
+import { stats } from "./content";
 
 export default function FounderLetter() {
+  const delays = useMemo(() => shuffledDelays(stats.length, 120), []);
   return (
     <section className="border-b border-line bg-ink-900">
       <div className="mx-auto grid max-w-[1200px] justify-center gap-10 px-8 py-26 md:grid-cols-[200px_minmax(0,620px)]">
@@ -28,9 +33,46 @@ export default function FounderLetter() {
             depois do iOS. Mas o que existe funciona, e quando você abre um ticket responde alguém que
             escreveu aquele endpoint.
           </p>
+          <div className="mb-8.5 flex divide-x divide-line">
+            {stats.map((s, i) => (
+              <div key={s.label} className="flex-1 px-3 first:pl-0">
+                <div
+                  className={`flex items-center gap-2 text-[28px] font-bold tracking-[-0.02em] whitespace-nowrap ${
+                    s.live ? "text-gold" : "text-cream"
+                  }`}
+                >
+                  {s.live && (
+                    <span className="relative flex size-2 shrink-0">
+                      <span className="absolute size-full animate-ping rounded-full bg-gold opacity-75" />
+                      <span className="relative size-2 rounded-full bg-gold" />
+                    </span>
+                  )}
+                  {s.live ? (
+                    <LiveCountUp
+                      target={s.target}
+                      decimals={s.decimals}
+                      prefix={s.prefix}
+                      suffix={s.suffix}
+                      delay={delays[i]}
+                      storageKey="bitbank:devs-count"
+                    />
+                  ) : (
+                    <CountUp
+                      target={s.target}
+                      decimals={s.decimals}
+                      prefix={s.prefix}
+                      suffix={s.suffix}
+                      delay={delays[i]}
+                    />
+                  )}
+                </div>
+                <div className="mt-2 font-mono text-[11.5px] leading-[1.4] text-mute">{s.label}</div>
+              </div>
+            ))}
+          </div>
           <div className="flex flex-wrap items-end gap-4.5">
-            <img src="/assets/assinatura-gold.svg" alt="Assinatura de Brenno Ysrael" className="h-[34px] w-auto rotate-[-2deg]" />
-            <span className="pb-1.5 font-mono text-[11.5px] text-mute-3">fundador · ainda faz code review na sexta</span>
+            <img src="/assets/assinatura-gold.svg" alt="Assinatura de Brenno Ysrael" className="h-[24px] w-auto rotate-[-2deg]" />
+            <span className="pb-1.5 font-mono text-[11.5px] text-mute">fundador · ainda faz code review na sexta</span>
           </div>
         </Reveal>
       </div>

@@ -41,10 +41,11 @@ export default function Cashback() {
   return (
     <section
       id="cashback"
-      className="relative overflow-hidden border-b border-line bg-ink-950 bg-cover bg-center bg-no-repeat"
+      className="relative flex min-h-screen flex-col overflow-hidden border-b border-line bg-ink-950 bg-center bg-no-repeat"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(10,9,8,0.72), rgba(10,9,8,0.86)), url('/assets/cashback-section-bg.jpg')",
+          "linear-gradient(180deg, #0A0908 0%, rgba(10,9,8,0.72) 220px, rgba(10,9,8,0.86) 100%), url('/assets/cashback-section-bg.jpg')",
+        backgroundSize: "100% 100%, cover",
       }}
     >
       <div className="pointer-events-none absolute inset-0">
@@ -66,7 +67,7 @@ export default function Cashback() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-[1200px] px-8 py-24">
+      <div className="relative mx-auto flex w-full max-w-[1200px] flex-1 flex-col justify-center px-8 py-24">
         <div className="mb-14 grid items-start gap-[72px] lg:grid-cols-[1fr_1.1fr]">
           <Reveal easing="ease">
             <div className="mb-4.5 font-mono text-xs tracking-[0.12em] text-gold">CASHBACK EM CRIPTO</div>

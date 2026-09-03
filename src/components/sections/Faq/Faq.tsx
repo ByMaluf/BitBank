@@ -1,12 +1,49 @@
+import { useState } from "react";
 import Reveal from "@/components/ui/Reveal";
 import { faq } from "./content";
 
-const Plus = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5C542" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+const Plus = ({ open }: { open: boolean }) => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#F5C542"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={`shrink-0 transition-transform duration-300 ease-[cubic-bezier(.2,.7,.2,1)] ${open ? "rotate-45" : ""}`}
+  >
     <path d="M5 12h14" />
     <path d="M12 5v14" />
   </svg>
 );
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="bg-ink-950 px-1 py-5">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="flex w-full cursor-pointer items-center justify-between gap-6 text-left text-[17px] font-medium text-cream"
+      >
+        <span>{q}</span>
+        <Plus open={open} />
+      </button>
+      <div
+        className="grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(.2,.7,.2,1)]"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <p className="mt-4 max-w-[62ch] text-[15.5px] leading-[1.65] text-mute">{a}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Faq() {
   return (
@@ -24,13 +61,7 @@ export default function Faq() {
         </Reveal>
         <Reveal delay={80} easing="ease" className="grid gap-px border-y border-line bg-line">
           {faq.map((item) => (
-            <details key={item.q} className="bg-ink-950 px-1 py-5">
-              <summary className="flex items-center justify-between gap-6 text-[17px] font-medium text-cream">
-                <span>{item.q}</span>
-                <Plus />
-              </summary>
-              <p className="mt-4 max-w-[62ch] text-[15.5px] leading-[1.65] text-mute">{item.a}</p>
-            </details>
+            <FaqItem key={item.q} q={item.q} a={item.a} />
           ))}
         </Reveal>
       </div>

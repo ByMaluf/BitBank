@@ -1,11 +1,10 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero, { type HeroVariant } from "@/components/sections/Hero";
-import Stats from "@/components/sections/Stats";
-import Cashback from "@/components/sections/Cashback";
-import FounderLetter from "@/components/sections/FounderLetter";
 import Features from "@/components/sections/Features";
+import Cashback from "@/components/sections/Cashback";
 import ApiSection from "@/components/sections/ApiSection";
+import FounderLetter from "@/components/sections/FounderLetter";
 import Pricing from "@/components/sections/Pricing";
 import Testimonials from "@/components/sections/Testimonials";
 import Quickstart from "@/components/sections/Quickstart";
@@ -28,11 +27,10 @@ export default function App() {
     <div className="min-h-screen overflow-x-clip bg-ink-950">
       <Header />
       <Hero variant={config.heroVariant} />
-      <Stats />
-      <Cashback />
-      <FounderLetter />
       <Features />
+      <Cashback />
       <ApiSection />
+      <FounderLetter />
       <Pricing defaultAnnual={config.defaultAnnual} />
       {config.showTestimonials && <Testimonials />}
       <Quickstart />

@@ -52,13 +52,6 @@
   a:hover {
     @apply text-gold-hi;
   }
-  summary {
-    list-style: none;
-    cursor: pointer;
-  }
-  summary::-webkit-details-marker {
-    display: none;
-  }
   ::selection {
     background: var(--color-gold);
     color: var(--color-ink-950);

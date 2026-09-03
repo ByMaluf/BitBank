@@ -79,14 +79,14 @@ export default function Hero({ variant = "split" }: { variant?: HeroVariant }) {
   return (
     <section
       id="topo"
-      className="relative z-0 border-b border-line bg-ink-950 bg-no-repeat pt-[84px]"
+      className="relative z-0 flex min-h-screen flex-col border-b border-line bg-ink-950 bg-no-repeat pt-[84px]"
       style={{
         backgroundImage: `radial-gradient(900px 380px at 50% -8%, rgba(245,197,66,0.10), transparent 70%), linear-gradient(180deg, rgba(10,9,8,0) 45%, rgba(10,9,8,0.55) 80%, #0A0908 100%), linear-gradient(90deg, rgba(10,9,8,0.82) 0%, rgba(10,9,8,0.3) 50%, rgba(10,9,8,0.82) 100%), url('${HERO_BG}')`,
         backgroundSize: "auto, auto, auto, 100%",
         backgroundPosition: "center, center, center, center",
       }}
     >
-      <div className="mx-auto grid max-w-[1200px] items-center gap-16 px-8 pt-[104px] pb-24 lg:grid-cols-[1.05fr_1fr]">
+      <div className="mx-auto grid w-full max-w-[1200px] flex-1 items-center gap-16 px-8 py-24 lg:grid-cols-[1.05fr_1fr]">
         <div>
           <Reveal>
             <div className="mb-7">

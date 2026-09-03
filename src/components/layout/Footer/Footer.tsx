@@ -26,9 +26,13 @@ export default function Footer() {
           </div>
         ))}
       </div>
-      <div className="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-6 border-t border-line px-8 pt-6 pb-12">
+      <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6 border-t border-line px-8 pt-6 pb-12">
         <div className="font-mono text-[11.5px] text-mute-3">
           BitBank Instituição de Pagamento S.A. · CNPJ 00.000.000/0001-00 · São Paulo, BR
+        </div>
+        <div className="flex items-center gap-2 font-mono text-[11.5px] text-mute-3">
+          <span>criado por</span>
+          <img src="/assets/assinatura-gold.svg" alt="Assinatura de Brenno Ysrael" className="h-4 w-auto opacity-90" />
         </div>
         <div className="font-mono text-[11.5px] text-mute-3">© 2026 BitBank</div>
       </div>
