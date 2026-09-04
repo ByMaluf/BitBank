@@ -54,7 +54,7 @@ export default function Reveal({
     <div
       ref={ref}
       className={`transition-[opacity,transform] ${
-        shown ? "translate-y-0 opacity-100" : "translate-y-[18px] opacity-0"
+        shown ? "translate-y-0 opacity-100" : "translate-y-[1.125rem] opacity-0"
       } ${className}`}
       style={{ transitionDelay: `${delay}ms`, transitionDuration: `${duration}ms`, transitionTimingFunction: easing }}
     >

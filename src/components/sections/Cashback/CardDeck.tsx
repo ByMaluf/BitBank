@@ -71,7 +71,7 @@ export default function CardDeck({ onChange }: { onChange?: (frente: number) => 
 
   return (
     <div className="flex flex-col items-center gap-4 px-2 pt-2 pb-3 [perspective:1700px]">
-      <div ref={deckRef} className="relative mb-14 w-full max-w-[448px] [aspect-ratio:1.586]">
+      <div ref={deckRef} className="relative mb-14 w-full max-w-[28rem] [aspect-ratio:1.586]">
         {ORDER.map(({ id, variant }) => {
           const pos = id === frente ? 0 : 1;
           const style =
@@ -113,13 +113,13 @@ export default function CardDeck({ onChange }: { onChange?: (frente: number) => 
             onClick={() => irPara(id)}
             className="h-0.5 cursor-pointer rounded-full border-none p-0 transition-[background,width] duration-300"
             style={{
-              width: id === frente ? 26 : 16,
+              width: id === frente ? "1.625rem" : "1rem",
               background: id === frente ? ACTIVE_INFO[id].cor : "#2A2622",
             }}
           />
         ))}
       </div>
-      <div className="max-w-[320px] text-center font-mono text-[11.5px] text-[#8A8172]">
+      <div className="max-w-[20rem] text-center font-mono text-[0.71875rem] text-[#8A8172]">
         clique no cartão de trás pra trazer pra frente · no da frente, clique pra virar
       </div>
     </div>

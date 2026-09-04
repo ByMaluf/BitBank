@@ -8,10 +8,10 @@ const nav = [
 
 export default function Header() {
   return (
-    <header className="sticky top-4 z-50 mx-auto -mb-[68px] max-w-[1200px] overflow-hidden rounded-2xl bg-transparent backdrop-blur-[20px] shadow-[inset_0_1px_0_rgba(255,255,255,0.16)]">
-      <div className="flex h-[68px] items-center gap-10 px-8">
+    <header className="sticky top-4 z-50 mx-auto -mb-[4.25rem] max-w-[75rem] overflow-hidden rounded-2xl bg-transparent backdrop-blur-[20px] shadow-[inset_0_1px_0_rgba(255,255,255,0.16)]">
+      <div className="flex h-[4.25rem] items-center gap-10 px-8">
         <a href="#topo" className="flex items-center gap-2.5 text-cream hover:text-cream">
-          <img src="/assets/logo-bitbank.svg" alt="BitBank" className="h-[30px] w-auto" />
+          <img src="/assets/logo-bitbank.svg" alt="BitBank" className="h-[1.875rem] w-auto" />
         </a>
         <nav className="ml-auto hidden items-center gap-7 md:flex">
           {nav.map((i) => (

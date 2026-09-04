@@ -8,17 +8,17 @@ export default function Pricing({ defaultAnnual = false }: { defaultAnnual?: boo
   const [cycle, setCycle] = useState<Cycle>(defaultAnnual ? "annual" : "monthly");
 
   const tab = (active: boolean) =>
-    `cursor-pointer rounded-full px-4 py-2 text-[13.5px] font-semibold transition-colors ${
+    `cursor-pointer rounded-full px-4 py-2 text-[0.84375rem] font-semibold transition-colors ${
       active ? "bg-gold text-ink-950" : "text-mute hover:text-cream"
     }`;
 
   return (
     <section id="precos" className="border-b border-line bg-ink-900">
-      <div className="mx-auto max-w-[1200px] px-8 py-24">
+      <div className="mx-auto max-w-[75rem] px-8 py-24">
         <Reveal easing="ease" className="mb-13 flex flex-wrap items-end justify-between gap-10">
-          <div className="max-w-[560px]">
+          <div className="max-w-[35rem]">
             <div className="mb-4.5 font-mono text-xs tracking-[0.12em] text-gold">QUANTO CUSTA</div>
-            <h2 className="text-[44px] leading-[1.06] font-bold tracking-[-0.03em]">
+            <h2 className="text-[2.75rem] leading-[1.06] font-bold tracking-[-0.03em]">
               Sem tarifa escondida no rodapé.
             </h2>
           </div>
@@ -40,11 +40,11 @@ export default function Pricing({ defaultAnnual = false }: { defaultAnnual?: boo
                 }`}
               >
                 {p.featured && (
-                  <span className="absolute -top-[11px] left-8 rounded-full bg-gold px-2.5 py-1 font-mono text-[10px] font-bold tracking-[0.08em] text-ink-950">
+                  <span className="absolute -top-[0.6875rem] left-8 rounded-full bg-gold px-2.5 py-1 font-mono text-[0.625rem] font-bold tracking-[0.08em] text-ink-950">
                     MAIS ESCOLHIDO
                   </span>
                 )}
-                <div className="mb-1.5 text-[15px] font-semibold tracking-[0.02em]">{p.name}</div>
+                <div className="mb-1.5 text-[0.9375rem] font-semibold tracking-[0.02em]">{p.name}</div>
                 <div
                   className={`mb-6 font-mono text-xs ${p.featured ? "text-[#8A8172]" : "text-mute-2"}`}
                 >
@@ -52,7 +52,7 @@ export default function Pricing({ defaultAnnual = false }: { defaultAnnual?: boo
                 </div>
                 <div className="mb-2 flex items-baseline gap-1.5">
                   <span
-                    className={`text-[40px] font-bold tracking-[-0.03em] ${p.featured ? "text-gold" : ""}`}
+                    className={`text-[2.5rem] font-bold tracking-[-0.03em] ${p.featured ? "text-gold" : ""}`}
                   >
                     {p.price[cycle]}
                   </span>
@@ -69,7 +69,7 @@ export default function Pricing({ defaultAnnual = false }: { defaultAnnual?: boo
                   {p.items.map((it) => (
                     <div
                       key={it}
-                      className={`text-[14.5px] ${p.featured ? "text-cream-2" : "text-sub"}`}
+                      className={`text-[0.90625rem] ${p.featured ? "text-cream-2" : "text-sub"}`}
                     >
                       {it}
                     </div>
@@ -77,7 +77,7 @@ export default function Pricing({ defaultAnnual = false }: { defaultAnnual?: boo
                 </div>
                 <a
                   href="#waitlist"
-                  className={`mt-auto rounded-[10px] py-3.5 text-center text-[15px] ${
+                  className={`mt-auto rounded-[0.625rem] py-3.5 text-center text-[0.9375rem] ${
                     p.featured
                       ? "bg-gold font-semibold text-ink-950 hover:bg-gold-hi hover:text-ink-950"
                       : "border border-line-3 font-medium text-cream hover:border-[#4A4238] hover:text-cream"

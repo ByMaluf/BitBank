@@ -25,6 +25,8 @@
   --color-term: #7fbf6a;
 
   --animate-blink: blink 1s steps(1) infinite;
+  --animate-marquee: marquee 65s linear infinite;
+  --animate-marquee-reverse: marquee 75s linear infinite reverse;
 }
 
 @keyframes blink {
@@ -35,6 +37,15 @@
   50%,
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 

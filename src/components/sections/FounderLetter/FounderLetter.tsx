@@ -8,9 +8,9 @@ export default function FounderLetter() {
   const delays = useMemo(() => shuffledDelays(stats.length, 120), []);
   return (
     <section className="border-b border-line bg-ink-900">
-      <div className="mx-auto grid max-w-[1200px] justify-center gap-10 px-8 py-26 md:grid-cols-[200px_minmax(0,620px)]">
+      <div className="mx-auto grid max-w-[75rem] justify-center gap-10 px-8 py-26 md:grid-cols-[12.5rem_minmax(0,38.75rem)]">
         <Reveal easing="ease">
-          <div className="border-t border-gold pt-3.5 font-mono text-[11.5px] leading-[1.9] tracking-[0.14em] text-mute-3">
+          <div className="border-t border-gold pt-3.5 font-mono text-[0.71875rem] leading-[1.9] tracking-[0.14em] text-mute-3">
             CARTA DO
             <br />
             FUNDADOR
@@ -37,7 +37,7 @@ export default function FounderLetter() {
             {stats.map((s, i) => (
               <div key={s.label} className="flex-1 px-3 first:pl-0">
                 <div
-                  className={`flex items-center gap-2 text-[28px] font-bold tracking-[-0.02em] whitespace-nowrap ${
+                  className={`flex items-center gap-2 text-[1.75rem] font-bold tracking-[-0.02em] whitespace-nowrap ${
                     s.live ? "text-gold" : "text-cream"
                   }`}
                 >
@@ -66,13 +66,13 @@ export default function FounderLetter() {
                     />
                   )}
                 </div>
-                <div className="mt-2 font-mono text-[11.5px] leading-[1.4] text-mute">{s.label}</div>
+                <div className="mt-2 font-mono text-[0.71875rem] leading-[1.4] text-mute">{s.label}</div>
               </div>
             ))}
           </div>
           <div className="flex flex-wrap items-end gap-4.5">
-            <img src="/assets/assinatura-gold.svg" alt="Assinatura de Brenno Ysrael" className="h-[24px] w-auto rotate-[-2deg]" />
-            <span className="pb-1.5 font-mono text-[11.5px] text-mute">fundador · ainda faz code review na sexta</span>
+            <img src="/assets/assinatura-gold.svg" alt="Assinatura de Brenno Ysrael" className="h-[1.5rem] w-auto rotate-[-2deg]" />
+            <span className="pb-1.5 font-mono text-[0.71875rem] text-mute">fundador · ainda faz code review na sexta</span>
           </div>
         </Reveal>
       </div>

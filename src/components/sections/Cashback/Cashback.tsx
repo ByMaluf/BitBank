@@ -7,7 +7,7 @@ type ProviderRate = "padrao" | "bonus";
 const providers: { key: ProviderRate; icon: React.ReactNode; label: React.ReactNode }[] = [
   {
     key: "padrao",
-    icon: <i className="fa-brands fa-aws text-[14px] text-mute" />,
+    icon: <i className="fa-brands fa-aws text-[0.875rem] text-mute" />,
     label: "Amazon Web Services",
   },
   {
@@ -17,7 +17,7 @@ const providers: { key: ProviderRate; icon: React.ReactNode; label: React.ReactN
   },
   {
     key: "padrao",
-    icon: <i className="fa-brands fa-microsoft text-[13px] text-mute" />,
+    icon: <i className="fa-brands fa-microsoft text-[0.8125rem] text-mute" />,
     label: "Microsoft Azure",
   },
   {
@@ -67,29 +67,29 @@ export default function Cashback() {
         />
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-[1200px] flex-1 flex-col justify-center px-8 py-24">
-        <div className="mb-14 grid items-start gap-[72px] lg:grid-cols-[1fr_1.1fr]">
+      <div className="relative mx-auto flex w-full max-w-[75rem] flex-1 flex-col justify-center px-8 py-10">
+        <div className="mb-14 grid items-start gap-[4.5rem] lg:grid-cols-[1fr_1.1fr]">
           <Reveal easing="ease">
             <div className="mb-4.5 font-mono text-xs tracking-[0.12em] text-gold">CASHBACK EM CRIPTO</div>
-            <h2 className="mb-5 text-[44px] leading-[1.06] font-bold tracking-[-0.03em]">
+            <h2 className="mb-5 text-[2.75rem] leading-[1.06] font-bold tracking-[-0.03em]">
               Sua infra se paga sozinha.
             </h2>
-            <p className="mb-9 max-w-[44ch] text-[17px] leading-[1.6] text-mute">
+            <p className="mb-9 max-w-[44ch] text-[1.0625rem] leading-[1.6] text-mute">
               Pague AWS, GCP, Azure ou Vercel com o cartão BitBank e escolha em qual moeda receber: BTC, ETH
               ou USDC. Cai na sua carteira dia 5, com o câmbio da hora registrado no extrato. Sem pontos, sem
               catálogo, sem "resgate em até 45 dias".
             </p>
             <div
-              className="flex items-center justify-between gap-4 rounded-[10px] border border-line bg-ink-800 py-4 pr-5 pl-5 transition-colors"
+              className="flex items-center justify-between gap-4 rounded-[0.625rem] border border-line bg-ink-800 py-4 pr-5 pl-5 transition-colors"
               style={{ borderLeft: `3px solid ${info.borda}` }}
             >
               <div>
-                <div className="mb-1.5 font-mono text-[10px] tracking-[0.14em] text-mute-2">CARTÃO ATIVO</div>
-                <span className="text-[17px] font-bold tracking-[-0.01em] transition-colors" style={{ color: info.cor }}>
+                <div className="mb-1.5 font-mono text-[0.625rem] tracking-[0.14em] text-mute-2">CARTÃO ATIVO</div>
+                <span className="text-[1.0625rem] font-bold tracking-[-0.01em] transition-colors" style={{ color: info.cor }}>
                   {info.nome}
                 </span>
               </div>
-              <span className="max-w-[26ch] text-right font-mono text-[13px] text-sub">{info.rota}</span>
+              <span className="max-w-[26ch] text-right font-mono text-[0.8125rem] text-sub">{info.rota}</span>
             </div>
           </Reveal>
           <Reveal delay={100} easing="ease">
@@ -98,21 +98,21 @@ export default function Cashback() {
         </div>
 
         <Reveal delay={150} easing="ease">
-          <div className="mb-2.5 ml-0.5 font-mono text-[11px] tracking-[0.1em] text-mute">
+          <div className="mb-2.5 ml-0.5 font-mono text-[0.6875rem] tracking-[0.1em] text-mute">
             CASHBACK POR PROVEDOR DE NUVEM
           </div>
           <div className="grid grid-cols-2 gap-2.5 md:grid-cols-4">
             {providers.map((p, i) => (
               <div
                 key={i}
-                className="rounded-[10px] border border-white/10 bg-white/5 px-5 py-4.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md"
+                className="rounded-[0.625rem] border border-white/10 bg-white/5 px-5 py-4.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md"
               >
                 <div className="text-2xl font-bold tracking-[-0.02em] transition-colors" style={{ color: acento }}>
                   {p.key === "padrao" ? info.taxaPadrao : info.taxaBonus}
                 </div>
                 <div className="mt-1.5 flex items-center gap-1.5">
                   {p.icon}
-                  <div className="font-mono text-[12.5px] text-mute">{p.label}</div>
+                  <div className="font-mono text-[0.78125rem] text-mute">{p.label}</div>
                 </div>
               </div>
             ))}

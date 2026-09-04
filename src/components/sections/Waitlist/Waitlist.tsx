@@ -10,9 +10,9 @@ export default function Waitlist() {
       id="waitlist"
       className="border-b border-line bg-[radial-gradient(700px_300px_at_50%_110%,rgba(245,197,66,0.10),transparent_70%)]"
     >
-      <div className="mx-auto max-w-[700px] px-8 py-26 text-center">
+      <div className="mx-auto max-w-[43.75rem] px-8 py-26 text-center">
         <Reveal easing="ease">
-          <h2 className="mb-4.5 text-[48px] leading-[1.04] font-bold tracking-[-0.035em]">
+          <h2 className="mb-4.5 text-[3rem] leading-[1.04] font-bold tracking-[-0.035em]">
             Seu banco, <span className="text-gold">seu código.</span>
           </h2>
           <p className="mx-auto mb-9 max-w-[46ch] text-lg leading-[1.55] text-mute">
@@ -37,17 +37,17 @@ export default function Waitlist() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="voce@dominio.dev"
-                className="max-w-[360px] flex-[1_1_300px] rounded-[10px] border border-line-3 bg-ink-800 px-4 py-3.5 text-[15px] text-cream outline-none focus:border-gold"
+                className="max-w-[22.5rem] flex-[1_1_18.75rem] rounded-[0.625rem] border border-line-3 bg-ink-800 px-4 py-3.5 text-[0.9375rem] text-cream outline-none focus:border-gold"
               />
               <button
                 type="submit"
-                className="cursor-pointer rounded-[10px] bg-gold px-6 py-3.5 text-[15px] font-semibold text-ink-950 hover:bg-gold-hi"
+                className="cursor-pointer rounded-[0.625rem] bg-gold px-6 py-3.5 text-[0.9375rem] font-semibold text-ink-950 hover:bg-gold-hi"
               >
                 Quero minha chave
               </button>
             </form>
           )}
-          <div className="mt-5 font-mono text-[11.5px] text-mute-3">
+          <div className="mt-5 font-mono text-[0.71875rem] text-mute-3">
             nada de spam · cancele com um clique
           </div>
         </Reveal>

@@ -68,8 +68,8 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
   };
 
   return (
-    <div className="relative w-full max-w-[448px]">
-      <div className="pointer-events-none absolute -bottom-[30px] left-[10%] right-[10%] h-10 rounded-full bg-[radial-gradient(closest-side,rgba(0,0,0,0.8),rgba(0,0,0,0))] blur-[9px] transition-[transform,opacity] duration-700 ease-[cubic-bezier(.2,.7,.2,1)]" />
+    <div className="relative w-full max-w-[28rem]">
+      <div className="pointer-events-none absolute -bottom-[1.875rem] left-[10%] right-[10%] h-10 rounded-full bg-[radial-gradient(closest-side,rgba(0,0,0,0.8),rgba(0,0,0,0))] blur-[9px] transition-[transform,opacity] duration-700 ease-[cubic-bezier(.2,.7,.2,1)]" />
       <div
         ref={outer}
         onPointerMove={onMove}
@@ -87,7 +87,7 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
         >
           {/* frente */}
           <div
-            className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-2xl border border-line-4 bg-[#100E0B] bg-cover bg-center px-[26px] py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.16),inset_0_-1px_0_rgba(0,0,0,0.85),inset_0_0_0_1px_rgba(245,197,66,0.1),0_26px_44px_-26px_rgba(0,0,0,0.9)] [backface-visibility:hidden]"
+            className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-2xl border border-line-4 bg-[#100E0B] bg-cover bg-center px-[1.625rem] py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.16),inset_0_-1px_0_rgba(0,0,0,0.85),inset_0_0_0_1px_rgba(245,197,66,0.1),0_26px_44px_-26px_rgba(0,0,0,0.9)] [backface-visibility:hidden]"
             style={{
               backgroundImage: `linear-gradient(163deg, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0) 34%), radial-gradient(130% 100% at 18% -10%, rgba(42,36,27,0.5) 0%, rgba(10,9,7,0.68) 52%, rgba(10,9,7,0.86) 100%), url('${c.bg}')`,
             }}
@@ -99,34 +99,34 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(102deg,transparent_30%,rgba(255,255,255,0.055)_44%,transparent_55%)]" />
             <div className="relative flex items-start justify-between">
               <img src="/assets/logo-bitbank.svg" alt="BitBank" className="h-6 w-auto" />
-              <span className="font-mono text-[10px] tracking-[0.16em] text-[#8A8172]">{c.label}</span>
+              <span className="font-mono text-[0.625rem] tracking-[0.16em] text-[#8A8172]">{c.label}</span>
             </div>
-            <div className="relative mt-1 flex items-center gap-[15px]">
-              <span className="relative h-[33px] w-11 rounded-md bg-[linear-gradient(135deg,#F8D670_0%,#B0801D_44%,#F2CA5E_68%,#8A6112_100%)] shadow-[inset_0_0_0_1px_rgba(10,9,8,0.4),0_1px_2px_rgba(0,0,0,0.65)]">
+            <div className="relative mt-1 flex items-center gap-[0.9375rem]">
+              <span className="relative h-[2.0625rem] w-11 rounded-md bg-[linear-gradient(135deg,#F8D670_0%,#B0801D_44%,#F2CA5E_68%,#8A6112_100%)] shadow-[inset_0_0_0_1px_rgba(10,9,8,0.4),0_1px_2px_rgba(0,0,0,0.65)]">
                 <span className="absolute inset-[5px_7px] bg-[repeating-linear-gradient(0deg,rgba(10,9,8,0.4)_0_1px,rgba(0,0,0,0)_1px_9px),repeating-linear-gradient(90deg,rgba(10,9,8,0.4)_0_1px,rgba(0,0,0,0)_1px_13px)]" />
               </span>
-              <span className="relative h-[21px] w-[21px] opacity-70">
-                <span className="absolute left-px top-1 h-[13px] w-1.5 rounded-r-xl border-r-[1.5px] border-[#E9D6A8]" />
-                <span className="absolute left-[5px] top-0.5 h-[17px] w-2 rounded-r-2xl border-r-[1.5px] border-[#E9D6A8]" />
-                <span className="absolute left-[9px] top-0 h-[21px] w-2.5 rounded-r-2xl border-r-[1.5px] border-[#E9D6A8]" />
+              <span className="relative h-[1.3125rem] w-[1.3125rem] opacity-70">
+                <span className="absolute left-px top-1 h-[0.8125rem] w-1.5 rounded-r-xl border-r-[1.5px] border-[#E9D6A8]" />
+                <span className="absolute left-[0.3125rem] top-0.5 h-[1.0625rem] w-2 rounded-r-2xl border-r-[1.5px] border-[#E9D6A8]" />
+                <span className="absolute left-[0.5625rem] top-0 h-[1.3125rem] w-2.5 rounded-r-2xl border-r-[1.5px] border-[#E9D6A8]" />
               </span>
             </div>
-            <div className="relative flex gap-[15px] font-mono text-[21px] tracking-[0.09em] text-[#DED5C4] [text-shadow:0_1px_0_rgba(0,0,0,0.9),0_-1px_0_rgba(255,255,255,0.13)]">
+            <div className="relative flex gap-[0.9375rem] font-mono text-[1.3125rem] tracking-[0.09em] text-[#DED5C4] [text-shadow:0_1px_0_rgba(0,0,0,0.9),0_-1px_0_rgba(255,255,255,0.13)]">
               {c.number.split(" ").map((g, i) => (
                 <span key={i}>{g}</span>
               ))}
             </div>
             <div className="relative flex items-end justify-between gap-4">
-              <div className="flex items-end gap-[26px]">
+              <div className="flex items-end gap-[1.625rem]">
                 <div>
-                  <div className="mb-1.5 font-mono text-[8.5px] tracking-[0.2em] text-mute-2">TITULAR</div>
-                  <div className="font-mono text-[12.5px] tracking-[0.1em] text-cream-2 [text-shadow:0_1px_0_rgba(0,0,0,0.8)]">
+                  <div className="mb-1.5 font-mono text-[0.53125rem] tracking-[0.2em] text-mute-2">TITULAR</div>
+                  <div className="font-mono text-[0.78125rem] tracking-[0.1em] text-cream-2 [text-shadow:0_1px_0_rgba(0,0,0,0.8)]">
                     BRENNO YSRAEL
                   </div>
                 </div>
                 <div>
-                  <div className="mb-1.5 font-mono text-[8.5px] tracking-[0.2em] text-mute-2">VALIDADE</div>
-                  <div className="font-mono text-[12.5px] tracking-[0.1em] text-cream-2 [text-shadow:0_1px_0_rgba(0,0,0,0.8)]">
+                  <div className="mb-1.5 font-mono text-[0.53125rem] tracking-[0.2em] text-mute-2">VALIDADE</div>
+                  <div className="font-mono text-[0.78125rem] tracking-[0.1em] text-cream-2 [text-shadow:0_1px_0_rgba(0,0,0,0.8)]">
                     08/31
                   </div>
                 </div>
@@ -143,24 +143,24 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
               backgroundPosition: "center",
             }}
           >
-            <div className="mt-[22px] h-12 bg-[linear-gradient(180deg,#1A1918_0%,#050505_46%,#121110_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]" />
+            <div className="mt-[1.375rem] h-12 bg-[linear-gradient(180deg,#1A1918_0%,#050505_46%,#121110_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]" />
             <div className="flex items-stretch gap-2.5 px-6 pt-5">
-              <div className="flex h-10 flex-1 items-center overflow-hidden rounded-[3px] bg-[#EFEAE0] bg-[repeating-linear-gradient(90deg,rgba(0,0,0,0.05)_0_2px,rgba(0,0,0,0)_2px_5px)] px-3.5">
-                <img src="/assets/assinatura-escura.svg" alt="Assinatura de Brenno Ysrael" className="h-[26px] w-auto rotate-[-1.5deg] opacity-90" />
+              <div className="flex h-10 flex-1 items-center overflow-hidden rounded-[0.1875rem] bg-[#EFEAE0] bg-[repeating-linear-gradient(90deg,rgba(0,0,0,0.05)_0_2px,rgba(0,0,0,0)_2px_5px)] px-3.5">
+                <img src="/assets/assinatura-escura.svg" alt="Assinatura de Brenno Ysrael" className="h-[1.625rem] w-auto rotate-[-1.5deg] opacity-90" />
               </div>
-              <div className="grid w-[68px] place-items-center rounded-[3px] bg-[#F6F3ED]">
-                <span className="font-mono text-[13px] font-bold tracking-[0.12em] text-ink-950">{c.verso3digits}</span>
+              <div className="grid w-[4.25rem] place-items-center rounded-[0.1875rem] bg-[#F6F3ED]">
+                <span className="font-mono text-[0.8125rem] font-bold tracking-[0.12em] text-ink-950">{c.verso3digits}</span>
               </div>
             </div>
-            <div className="mt-auto flex items-end justify-between gap-[18px] px-6 pt-5 pb-[22px]">
-              <div className="max-w-[32ch] font-mono text-[9px] leading-[1.75] text-mute-2">
+            <div className="mt-auto flex items-end justify-between gap-[1.125rem] px-6 pt-5 pb-[1.375rem]">
+              <div className="max-w-[32ch] font-mono text-[0.5625rem] leading-[1.75] text-mute-2">
                 Emitido por BitBank IP S.A. Perdeu? Bloqueie pelo app ou por{" "}
                 <span className="text-[#8A8172]">0800 000 1010</span>.
                 <br />
                 {c.verseNumberLabel}
               </div>
               <div className="text-right">
-                <div className="mb-1.5 font-mono text-[8.5px] tracking-[0.2em] text-mute-2">CASHBACK CRIPTO</div>
+                <div className="mb-1.5 font-mono text-[0.53125rem] tracking-[0.2em] text-mute-2">CASHBACK CRIPTO</div>
                 <div className="text-xl font-bold tracking-[-0.02em] text-gold">{c.cashback}</div>
               </div>
             </div>

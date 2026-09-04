@@ -47,7 +47,7 @@ function useTypewriter(enabled = true) {
 
 const color = { cmd: "text-cream", ok: "text-term", out: "text-sub" } as const;
 
-export default function Terminal({ minHeight = 300 }: { minHeight?: number }) {
+export default function Terminal({ minHeight = "18.75rem" }: { minHeight?: string }) {
   const lines = useTypewriter();
 
   return (
@@ -56,10 +56,10 @@ export default function Terminal({ minHeight = 300 }: { minHeight?: number }) {
         <span className="size-2.5 rounded-full bg-[#33302B]" />
         <span className="size-2.5 rounded-full bg-[#33302B]" />
         <span className="size-2.5 rounded-full bg-[#33302B]" />
-        <span className="ml-2 font-mono text-[11px] text-mute-2">~/projetos/bitbank</span>
+        <span className="ml-2 font-mono text-[0.6875rem] text-mute-2">~/projetos/bitbank</span>
       </div>
       <div
-        className="grid gap-0.5 px-5 pt-5 pb-6 font-mono text-[13px] leading-[1.85]"
+        className="grid gap-0.5 px-5 pt-5 pb-6 font-mono text-[0.8125rem] leading-[1.85]"
         style={{ minHeight }}
       >
         {lines.map((l, i) => (
