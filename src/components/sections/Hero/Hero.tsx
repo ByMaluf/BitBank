@@ -13,16 +13,16 @@ const Badge = () => (
 );
 
 const Ctas = ({ center = false }: { center?: boolean }) => (
-  <div className={`flex flex-wrap gap-3.5 ${center ? "justify-center" : ""}`}>
+  <div className={`flex gap-2.5 sm:gap-3.5 ${center ? "justify-center" : ""}`}>
     <a
       href="#waitlist"
-      className="rounded-btn bg-gold px-3.5 py-2 text-sm font-semibold text-ink-950 hover:bg-gold-hi hover:text-ink-950"
+      className="flex-1 rounded-btn bg-gold px-2.5 py-2 text-center text-xs font-semibold whitespace-nowrap text-ink-950 hover:bg-gold-hi hover:text-ink-950 sm:flex-initial sm:px-3.5 sm:text-sm"
     >
       Criar conta grátis
     </a>
     <a
       href="#docs"
-      className="rounded-btn border border-line-3 bg-ink-800 px-3.5 py-2 text-sm font-medium text-cream hover:border-line-hover hover:text-cream"
+      className="flex-1 rounded-btn border border-line-3 bg-ink-800 px-2.5 py-2 text-center text-xs font-medium whitespace-nowrap text-cream hover:border-line-hover hover:text-cream sm:flex-initial sm:px-3.5 sm:text-sm"
     >
       Ver a documentação
     </a>
@@ -79,11 +79,10 @@ export default function Hero({ variant = "split" }: { variant?: HeroVariant }) {
   return (
     <section
       id="topo"
-      className="relative z-0 flex min-h-screen flex-col border-b border-line bg-ink-950 bg-no-repeat pt-[3.5rem]"
+      className="relative z-0 flex min-h-screen flex-col border-b border-line bg-ink-950 bg-no-repeat pt-[3.5rem] [background-position:bottom] lg:[background-position:center]"
       style={{
         backgroundImage: `radial-gradient(900px 380px at 50% -8%, rgba(245,197,66,0.10), transparent 70%), linear-gradient(180deg, rgba(10,9,8,0) 45%, rgba(10,9,8,0.55) 80%, #0A0908 100%), linear-gradient(90deg, rgba(10,9,8,0.82) 0%, rgba(10,9,8,0.3) 50%, rgba(10,9,8,0.82) 100%), url('${HERO_BG}')`,
         backgroundSize: "auto, auto, auto, 100%",
-        backgroundPosition: "center, center, center, center",
       }}
     >
       <div className="mx-auto grid w-full max-w-[75rem] flex-1 content-center items-center gap-16 px-8 py-10 lg:grid-cols-[1.05fr_1fr]">

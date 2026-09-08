@@ -67,7 +67,7 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
   };
 
   return (
-    <div className="relative w-full max-w-[28rem]">
+    <div className="@container relative w-full max-w-[28rem]">
       <div className="pointer-events-none absolute -bottom-[1.875rem] left-[10%] right-[10%] h-10 rounded-full bg-[radial-gradient(closest-side,rgba(0,0,0,0.8),rgba(0,0,0,0))] blur-[9px] transition-[transform,opacity] duration-700 ease-[cubic-bezier(.2,.7,.2,1)]" />
       <div
         ref={outer}
@@ -78,8 +78,9 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
         tabIndex={0}
         aria-label={`Cartão BitBank ${variant} — clique para virar`}
         onKeyDown={(e) => e.key === "Enter" && setFlipped((v) => !v)}
-        className="relative aspect-[1.586] w-full cursor-pointer [transform-style:preserve-3d]"
+        className="relative aspect-[1.586] w-full cursor-pointer overflow-hidden [transform-style:preserve-3d]"
       >
+        <div className="absolute top-0 left-0 aspect-[1.586] w-[28rem] origin-top-left [transform:scale(calc(100cqw/28rem))]">
         <div
           className="absolute inset-0 transition-transform duration-[950ms] ease-[cubic-bezier(.35,.05,.15,1)] [transform-style:preserve-3d]"
           style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
@@ -162,6 +163,7 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

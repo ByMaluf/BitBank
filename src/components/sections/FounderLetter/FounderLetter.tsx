@@ -12,7 +12,7 @@ export default function FounderLetter() {
       bg="bg-ink-900"
       containerClassName="grid justify-center gap-10 py-26 md:grid-cols-[12.5rem_minmax(0,38.75rem)]"
     >
-      <Reveal easing="ease">
+      <Reveal easing="ease" className="min-w-0">
         <div className="border-t border-gold pt-3.5 font-mono text-2xs leading-[1.9] tracking-[0.14em] text-mute-3">
           CARTA DO
           <br />
@@ -21,7 +21,7 @@ export default function FounderLetter() {
           <span className="text-mute-4">out. 2025</span>
         </div>
       </Reveal>
-      <Reveal delay={100} easing="ease">
+      <Reveal delay={100} easing="ease" className="min-w-0">
         <p className="mb-5.5 text-xl leading-[1.62] text-cream-2">
           Em 2023 eu perdi um cliente porque um boleto do meu MEI caiu na conta errada e eu levei nove dias
           pra descobrir. Nove dias respondendo "vou verificar" num e-mail que eu já sabia perdido.
@@ -36,11 +36,11 @@ export default function FounderLetter() {
           depois do iOS. Mas o que existe funciona, e quando você abre um ticket responde alguém que
           escreveu aquele endpoint.
         </p>
-        <div className="mb-8.5 flex divide-x divide-line">
+        <div className="mb-8.5 grid grid-cols-2 gap-x-6 gap-y-6 md:flex md:gap-0 md:divide-x md:divide-line">
           {stats.map((s, i) => (
-            <div key={s.label} className="flex-1 px-3 first:pl-0">
+            <div key={s.label} className="min-w-0 md:flex-1 md:px-3 md:first:pl-0">
               <div
-                className={`flex items-center gap-2 text-[1.75rem] font-bold tracking-[-0.02em] whitespace-nowrap ${
+                className={`flex items-center gap-2 text-2xl whitespace-nowrap tracking-[-0.02em] md:text-[1.75rem] font-bold ${
                   s.live ? "text-gold" : "text-cream"
                 }`}
               >
