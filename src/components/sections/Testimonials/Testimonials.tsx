@@ -10,7 +10,7 @@ const rowBLoop = [...groupB, ...groupB];
 
 function Card({ t }: { t: Testimonial }) {
   return (
-    <div className="mr-5 flex h-36 w-[26rem] shrink-0 items-center gap-4 rounded-2xl bg-white/[0.03] p-5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[8.2px]">
+    <div className="mr-5 flex h-36 w-[26rem] shrink-0 items-center gap-4 overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.10)] p-5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[20px]">
       <img src={t.photo} alt={t.name} className="size-12 shrink-0 rounded-full object-cover" />
       <div className="min-w-0">
         <p className="line-clamp-3 text-[0.875rem] leading-[1.45] text-cream-2">{t.quote}</p>
@@ -31,9 +31,8 @@ function MarqueeRow({ items, reverse = false }: { items: Testimonial[]; reverse?
       }}
     >
       <div
-        className={`flex w-max hover:[animation-play-state:paused] ${
-          reverse ? "animate-marquee-reverse" : "animate-marquee"
-        }`}
+        className={`flex w-max hover:[animation-play-state:paused] ${reverse ? "animate-marquee-reverse" : "animate-marquee"
+          }`}
       >
         {items.map((t, i) => (
           <Card key={i} t={t} />
@@ -46,15 +45,15 @@ function MarqueeRow({ items, reverse = false }: { items: Testimonial[]; reverse?
 export default function Testimonials() {
   return (
     <section
-      className="relative overflow-hidden border-b border-line bg-ink-950 bg-no-repeat"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden border-b border-line bg-ink-950 bg-no-repeat"
       style={{
         backgroundImage:
           "radial-gradient(1400px 950px at 0% 0%, rgba(10,9,8,0.15) 0%, rgba(10,9,8,0.35) 30%, rgba(10,9,8,0.6) 50%, rgba(10,9,8,0.85) 70%, #0A0908 100%), url('/assets/empresa_bitbank.png')",
-        backgroundSize: "auto, 70%",
-        backgroundPosition: "center, left top",
+        backgroundSize: "auto, cover",
+        backgroundPosition: "center, left 35%",
       }}
     >
-      <div className="relative mx-auto max-w-[75rem] px-8 pt-24">
+      <div className="relative -top-10 mx-auto w-full max-w-[75rem] px-8">
         <Reveal easing="ease" className="mb-13">
           <div className="mb-4.5 font-mono text-xs tracking-[0.12em] text-gold">PESSOAS REAIS</div>
           <h2 className="text-[2.75rem] leading-[1.06] font-bold tracking-[-0.03em]">
@@ -63,12 +62,10 @@ export default function Testimonials() {
         </Reveal>
       </div>
 
-      <Reveal easing="ease" delay={100} className="relative grid gap-5">
+      <Reveal easing="ease" delay={100} className="relative grid gap-5 py-10">
         <MarqueeRow items={rowA} />
         <MarqueeRow items={rowBLoop} reverse />
       </Reveal>
-
-      <div className="pb-24" />
     </section>
   );
 }

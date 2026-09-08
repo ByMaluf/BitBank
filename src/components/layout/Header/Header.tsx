@@ -8,10 +8,10 @@ const nav = [
 
 export default function Header() {
   return (
-    <header className="sticky top-4 z-50 mx-auto -mb-[4.25rem] max-w-[75rem] overflow-hidden rounded-2xl bg-transparent backdrop-blur-[20px] shadow-[inset_0_1px_0_rgba(255,255,255,0.16)]">
-      <div className="flex h-[4.25rem] items-center gap-10 px-8">
+    <header className="relative z-50 -mb-[3.5rem] overflow-hidden bg-transparent backdrop-blur-[8px]">
+      <div className="mx-auto flex h-[3.5rem] max-w-[75rem] items-center gap-10 px-8">
         <a href="#topo" className="flex items-center gap-2.5 text-cream hover:text-cream">
-          <img src="/assets/logo-bitbank.svg" alt="BitBank" className="h-[1.875rem] w-auto" />
+          <img src="/assets/logo-bitbank.svg" alt="BitBank" className="h-6 w-auto" />
         </a>
         <nav className="ml-auto hidden items-center gap-7 md:flex">
           {nav.map((i) => (
@@ -23,13 +23,7 @@ export default function Header() {
         <div className="ml-auto flex items-center gap-3 md:ml-0">
           <a
             href="#waitlist"
-            className="rounded-lg border border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.05)] px-3.5 py-2 text-sm text-cream backdrop-blur-md hover:border-[rgba(245,197,66,0.45)] hover:bg-[rgba(255,255,255,0.09)] hover:text-cream"
-          >
-            Entrar
-          </a>
-          <a
-            href="#waitlist"
-            className="rounded-lg bg-gold px-4 py-2.5 text-sm font-semibold text-ink-950 hover:bg-gold-hi hover:text-ink-950"
+            className="rounded-lg bg-gold px-3.5 py-2 text-sm font-semibold text-ink-950 hover:bg-gold-hi hover:text-ink-950"
           >
             Criar conta grátis
           </a>

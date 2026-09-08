@@ -41,7 +41,7 @@ export default function Waitlist() {
               />
               <button
                 type="submit"
-                className="cursor-pointer rounded-[0.625rem] bg-gold px-6 py-3.5 text-[0.9375rem] font-semibold text-ink-950 hover:bg-gold-hi"
+                className="cursor-pointer rounded-[0.625rem] bg-gold px-3.5 py-2 text-sm font-semibold text-ink-950 hover:bg-gold-hi"
               >
                 Quero minha chave
               </button>

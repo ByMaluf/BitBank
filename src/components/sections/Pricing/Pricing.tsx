@@ -77,7 +77,7 @@ export default function Pricing({ defaultAnnual = false }: { defaultAnnual?: boo
                 </div>
                 <a
                   href="#waitlist"
-                  className={`mt-auto rounded-[0.625rem] py-3.5 text-center text-[0.9375rem] ${
+                  className={`mt-auto rounded-[0.625rem] py-2 text-center text-sm ${
                     p.featured
                       ? "bg-gold font-semibold text-ink-950 hover:bg-gold-hi hover:text-ink-950"
                       : "border border-line-3 font-medium text-cream hover:border-[#4A4238] hover:text-cream"

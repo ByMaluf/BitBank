@@ -16,13 +16,13 @@ const Ctas = ({ center = false }: { center?: boolean }) => (
   <div className={`flex flex-wrap gap-3.5 ${center ? "justify-center" : ""}`}>
     <a
       href="#waitlist"
-      className="rounded-[0.625rem] bg-gold px-6 py-4 text-base font-semibold text-ink-950 hover:bg-gold-hi hover:text-ink-950"
+      className="rounded-[0.625rem] bg-gold px-3.5 py-2 text-sm font-semibold text-ink-950 hover:bg-gold-hi hover:text-ink-950"
     >
       Criar conta grátis
     </a>
     <a
       href="#docs"
-      className="rounded-[0.625rem] border border-line-3 bg-ink-800 px-6 py-4 text-base font-medium text-cream hover:border-[#4A4238] hover:text-cream"
+      className="rounded-[0.625rem] border border-line-3 bg-ink-800 px-3.5 py-2 text-sm font-medium text-cream hover:border-[#4A4238] hover:text-cream"
     >
       Ver a documentação
     </a>
@@ -79,7 +79,7 @@ export default function Hero({ variant = "split" }: { variant?: HeroVariant }) {
   return (
     <section
       id="topo"
-      className="relative z-0 flex min-h-screen flex-col border-b border-line bg-ink-950 bg-no-repeat "
+      className="relative z-0 flex min-h-screen flex-col border-b border-line bg-ink-950 bg-no-repeat pt-[3.5rem]"
       style={{
         backgroundImage: `radial-gradient(900px 380px at 50% -8%, rgba(245,197,66,0.10), transparent 70%), linear-gradient(180deg, rgba(10,9,8,0) 45%, rgba(10,9,8,0.55) 80%, #0A0908 100%), linear-gradient(90deg, rgba(10,9,8,0.82) 0%, rgba(10,9,8,0.3) 50%, rgba(10,9,8,0.82) 100%), url('${HERO_BG}')`,
         backgroundSize: "auto, auto, auto, 100%",
@@ -98,20 +98,13 @@ export default function Hero({ variant = "split" }: { variant?: HeroVariant }) {
           </Reveal>
           <Reveal delay={120}>
             <p className="mb-9 max-w-[46ch] text-[1.1875rem] leading-[1.55] text-mute">
-              Conta PF e PJ com PIX, boleto e cartão — e uma API pra tudo que você faria clicando. O que
-              você gasta em AWS, GCP, Azure ou Vercel volta em bitcoin, ether ou USDC — não em pontos.
+              Conta PF e PJ com PIX, boleto e cartão, e uma API pra tudo que você faria clicando. O que
+              você gasta em AWS, GCP, Azure ou Vercel volta em bitcoin, ether ou USDC, não em pontos.
             </p>
           </Reveal>
           <Reveal delay={180}>
             <div className="mb-8">
               <Ctas />
-            </div>
-          </Reveal>
-          <Reveal delay={240}>
-            <div className="flex flex-wrap gap-6 font-mono text-xs text-mute-2">
-              <span>conta aberta em 4 minutos</span>
-              <span>sem tarifa de manutenção</span>
-              <span>sandbox que não expira</span>
             </div>
           </Reveal>
         </div>

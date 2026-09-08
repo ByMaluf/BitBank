@@ -8,14 +8,14 @@ export const testimonials = [
   },
   {
     quote:
-      "O cashback cobre quase metade da minha conta da AWS — e recebo em bitcoin, que é onde eu ia colocar esse dinheiro de qualquer jeito.",
+      "O cashback cobre quase metade da minha conta da AWS, e recebo em bitcoin, que é onde eu ia colocar esse dinheiro de qualquer jeito.",
     name: "Rafael Nakano",
     role: "freelancer backend · Curitiba",
     photo: "/assets/Rafael.png",
   },
   {
     quote:
-      "Um cartão por cliente resolveu meu pior problema de contabilidade. Não abro planilha há sete meses — isso me devolveu dois sábados por mês.",
+      "Um cartão por cliente resolveu meu pior problema de contabilidade. Não abro planilha há sete meses. Isso me devolveu dois sábados por mês.",
     name: "Camila Braga",
     role: "estúdio de produto · Belo Horizonte",
     photo: "/assets/Camilla.png",
