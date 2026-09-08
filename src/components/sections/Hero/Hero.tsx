@@ -5,7 +5,7 @@ export type HeroVariant = "split" | "centered";
 
 const Badge = () => (
   <div className="inline-flex items-center gap-2.5 rounded-full border border-line-3 bg-ink-800 py-1.5 pr-3.5 pl-2">
-    <span className="rounded-full bg-gold px-1.5 py-0.5 font-mono text-[0.625rem] font-bold tracking-[0.08em] text-ink-950">
+    <span className="rounded-full bg-gold px-1.5 py-0.5 font-mono text-3xs font-bold tracking-[0.08em] text-ink-950">
       NOVO
     </span>
     <span className="font-mono text-xs text-sub">cashback em cripto: até 6% do que você gasta em cloud</span>
@@ -16,13 +16,13 @@ const Ctas = ({ center = false }: { center?: boolean }) => (
   <div className={`flex flex-wrap gap-3.5 ${center ? "justify-center" : ""}`}>
     <a
       href="#waitlist"
-      className="rounded-[0.625rem] bg-gold px-3.5 py-2 text-sm font-semibold text-ink-950 hover:bg-gold-hi hover:text-ink-950"
+      className="rounded-btn bg-gold px-3.5 py-2 text-sm font-semibold text-ink-950 hover:bg-gold-hi hover:text-ink-950"
     >
       Criar conta grátis
     </a>
     <a
       href="#docs"
-      className="rounded-[0.625rem] border border-line-3 bg-ink-800 px-3.5 py-2 text-sm font-medium text-cream hover:border-[#4A4238] hover:text-cream"
+      className="rounded-btn border border-line-3 bg-ink-800 px-3.5 py-2 text-sm font-medium text-cream hover:border-line-hover hover:text-cream"
     >
       Ver a documentação
     </a>
@@ -97,7 +97,7 @@ export default function Hero({ variant = "split" }: { variant?: HeroVariant }) {
             <Title className="mb-6 max-w-[15ch] text-5xl leading-[1.02] font-bold tracking-[-0.035em] md:text-[3.875rem]" />
           </Reveal>
           <Reveal delay={120}>
-            <p className="mb-9 max-w-[46ch] text-[1.1875rem] leading-[1.55] text-mute">
+            <p className="mb-9 max-w-[46ch] text-md leading-[1.55] text-mute">
               Conta PF e PJ com PIX, boleto e cartão, e uma API pra tudo que você faria clicando. O que
               você gasta em AWS, GCP, Azure ou Vercel volta em bitcoin, ether ou USDC, não em pontos.
             </p>

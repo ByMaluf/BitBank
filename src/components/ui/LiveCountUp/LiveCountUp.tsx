@@ -9,11 +9,8 @@ type Props = {
   suffix?: string;
   duration?: number;
   delay?: number;
-  /** Incremento aleatório (min, max) a cada "tique" depois que a contagem inicial termina. */
   liveStep?: [number, number];
-  /** Intervalo aleatório (min, max) em ms entre um tique e outro. */
   liveInterval?: [number, number];
-  /** Se informado, guarda o valor no localStorage — um refresh continua de onde parou em vez de voltar pro `target`. */
   storageKey?: string;
 };
 
@@ -34,17 +31,9 @@ function writeStored(key: string | undefined, value: number) {
   if (!key) return;
   try {
     localStorage.setItem(key, String(value));
-  } catch {
-    // localStorage indisponível (modo privado, quota etc.) — segue só em memória
-  }
+  } catch {}
 }
 
-/**
- * Conta de 0 até `target` (como o CountUp) e, ao terminar, continua "crescendo"
- * sozinho em passos pequenos e aleatórios — uma contagem em tempo real falsa.
- * Cada incremento usa o NumberFlow (numberflow.barvian.me) pra girar os dígitos
- * como um odômetro, em vez de só trocar o texto.
- */
 export default function LiveCountUp({
   target,
   decimals = 0,

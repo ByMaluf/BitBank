@@ -34,7 +34,6 @@ const CARD: Record<
   },
 };
 
-/** Um cartão: inclinação segue o ponteiro (cor do brilho por variante), clique vira o cartão. */
 export default function BankCard3D({ variant }: { variant: CardVariant }) {
   const outer = useRef<HTMLDivElement>(null);
   const glare = useRef<HTMLDivElement>(null);
@@ -85,7 +84,6 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
           className="absolute inset-0 transition-transform duration-[950ms] ease-[cubic-bezier(.35,.05,.15,1)] [transform-style:preserve-3d]"
           style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
         >
-          {/* frente */}
           <div
             className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-2xl border border-line-4 bg-[#100E0B] bg-cover bg-center px-[1.625rem] py-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.16),inset_0_-1px_0_rgba(0,0,0,0.85),inset_0_0_0_1px_rgba(245,197,66,0.1),0_26px_44px_-26px_rgba(0,0,0,0.9)] [backface-visibility:hidden]"
             style={{
@@ -99,7 +97,7 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(102deg,transparent_30%,rgba(255,255,255,0.055)_44%,transparent_55%)]" />
             <div className="relative flex items-start justify-between">
               <img src="/assets/logo-bitbank.svg" alt="BitBank" className="h-6 w-auto" />
-              <span className="font-mono text-[0.625rem] tracking-[0.16em] text-[#8A8172]">{c.label}</span>
+              <span className="font-mono text-[0.625rem] tracking-[0.16em] text-mute-1">{c.label}</span>
             </div>
             <div className="relative mt-1 flex items-center gap-[0.9375rem]">
               <span className="relative h-[2.0625rem] w-11 rounded-md bg-[linear-gradient(135deg,#F8D670_0%,#B0801D_44%,#F2CA5E_68%,#8A6112_100%)] shadow-[inset_0_0_0_1px_rgba(10,9,8,0.4),0_1px_2px_rgba(0,0,0,0.65)]">
@@ -135,7 +133,6 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
             </div>
           </div>
 
-          {/* verso */}
           <div
             className="absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-line-4 bg-[#0E0D0B] bg-cover shadow-[inset_0_1px_0_rgba(255,255,255,0.12),inset_0_0_0_1px_rgba(245,197,66,0.05),0_26px_44px_-26px_rgba(0,0,0,0.9)] [backface-visibility:hidden] [transform:rotateY(180deg)]"
             style={{
@@ -155,7 +152,7 @@ export default function BankCard3D({ variant }: { variant: CardVariant }) {
             <div className="mt-auto flex items-end justify-between gap-[1.125rem] px-6 pt-5 pb-[1.375rem]">
               <div className="max-w-[32ch] font-mono text-[0.5625rem] leading-[1.75] text-mute-2">
                 Emitido por BitBank IP S.A. Perdeu? Bloqueie pelo app ou por{" "}
-                <span className="text-[#8A8172]">0800 000 1010</span>.
+                <span className="text-mute-1">0800 000 1010</span>.
                 <br />
                 {c.verseNumberLabel}
               </div>

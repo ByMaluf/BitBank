@@ -11,7 +11,6 @@ import Quickstart from "@/components/sections/Quickstart";
 import Faq from "@/components/sections/Faq";
 import Waitlist from "@/components/sections/Waitlist";
 
-/** Equivalentes aos "tweaks" da versão HTML. */
 const config: {
   heroVariant: HeroVariant;
   defaultAnnual: boolean;

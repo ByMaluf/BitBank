@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Reveal from "@/components/ui/Reveal";
+import Section from "@/components/ui/Section";
+import Kicker from "@/components/ui/Kicker";
 import { faq } from "./content";
 
 const Plus = ({ open }: { open: boolean }) => (
@@ -28,7 +30,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex w-full cursor-pointer items-center justify-between gap-6 text-left text-[1.0625rem] font-medium text-cream"
+        className="flex w-full cursor-pointer items-center justify-between gap-6 text-left text-body font-medium text-cream"
       >
         <span>{q}</span>
         <Plus open={open} />
@@ -38,7 +40,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
       >
         <div className="overflow-hidden">
-          <p className="mt-4 max-w-[62ch] text-[0.96875rem] leading-[1.65] text-mute">{a}</p>
+          <p className="mt-4 max-w-[62ch] text-body-sm leading-[1.65] text-mute">{a}</p>
         </div>
       </div>
     </div>
@@ -47,24 +49,22 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export default function Faq() {
   return (
-    <section id="faq" className="border-b border-line">
-      <div className="mx-auto grid max-w-[75rem] gap-16 px-8 py-24 lg:grid-cols-[0.8fr_1.2fr]">
-        <Reveal easing="ease">
-          <div className="mb-4.5 font-mono text-xs tracking-[0.12em] text-gold">DÚVIDAS HONESTAS</div>
-          <h2 className="mb-4 text-[2.5rem] leading-[1.06] font-bold tracking-[-0.03em]">
-            Perguntas diretas, respostas diretas.
-          </h2>
-          <p className="text-base leading-[1.6] text-mute">
-            Não encontrou? Escreva para <a href="#waitlist">suporte@bitbank.dev</a> — respondemos em até 4
-            horas úteis.
-          </p>
-        </Reveal>
-        <Reveal delay={80} easing="ease" className="grid gap-px border-y border-line bg-line">
-          {faq.map((item) => (
-            <FaqItem key={item.q} q={item.q} a={item.a} />
-          ))}
-        </Reveal>
-      </div>
-    </section>
+    <Section id="faq" containerClassName="grid gap-16 py-24 lg:grid-cols-[0.8fr_1.2fr]">
+      <Reveal easing="ease">
+        <Kicker>DÚVIDAS HONESTAS</Kicker>
+        <h2 className="mb-4 text-display-sm leading-[1.06] font-bold tracking-[-0.03em]">
+          Perguntas diretas, respostas diretas.
+        </h2>
+        <p className="text-base leading-[1.6] text-mute">
+          Não encontrou? Escreva para <a href="#waitlist">suporte@bitbank.dev</a> — respondemos em até 4
+          horas úteis.
+        </p>
+      </Reveal>
+      <Reveal delay={80} easing="ease" className="grid gap-px border-y border-line bg-line">
+        {faq.map((item) => (
+          <FaqItem key={item.q} q={item.q} a={item.a} />
+        ))}
+      </Reveal>
+    </Section>
   );
 }

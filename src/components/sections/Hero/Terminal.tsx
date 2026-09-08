@@ -56,10 +56,10 @@ export default function Terminal({ minHeight = "18.75rem" }: { minHeight?: strin
         <span className="size-2.5 rounded-full bg-[#33302B]" />
         <span className="size-2.5 rounded-full bg-[#33302B]" />
         <span className="size-2.5 rounded-full bg-[#33302B]" />
-        <span className="ml-2 font-mono text-[0.6875rem] text-mute-2">~/projetos/bitbank</span>
+        <span className="ml-2 font-mono text-2xs text-mute-2">~/projetos/bitbank</span>
       </div>
       <div
-        className="grid gap-0.5 px-5 pt-5 pb-6 font-mono text-[0.8125rem] leading-[1.85]"
+        className="grid gap-0.5 px-5 pt-5 pb-6 font-mono text-xs-mono leading-[1.85]"
         style={{ minHeight }}
       >
         {lines.map((l, i) => (

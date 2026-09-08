@@ -34,7 +34,6 @@ export const ACTIVE_INFO: Record<number, ActiveInfo> = {
   },
 };
 
-/** Baralho de dois cartões: o de trás pode ser trazido pra frente (clique, bolinha, ou scroll do mouse). */
 export default function CardDeck({ onChange }: { onChange?: (frente: number) => void }) {
   const [frente, setFrente] = useState(0);
   const rolando = useRef(false);
@@ -48,8 +47,6 @@ export default function CardDeck({ onChange }: { onChange?: (frente: number) => 
     onChange?.(id);
   };
 
-  // Listener nativo com passive:false: o onWheel sintético do React é passivo
-  // por padrão, então preventDefault() dentro dele não bloqueia o scroll da página.
   useEffect(() => {
     const deck = deckRef.current;
     if (!deck) return;
@@ -87,10 +84,6 @@ export default function CardDeck({ onChange }: { onChange?: (frente: number) => 
             <div
               key={id}
               onClickCapture={(e) => {
-                // Cartão de trás: intercepta na fase de captura, antes que o
-                // clique alcance o próprio onClick de flip do BankCard3D — só
-                // traz pra frente, não vira. O da frente recebe o clique
-                // normalmente (bubble) e vira, sem passar por aqui.
                 if (id !== frente) {
                   e.stopPropagation();
                   irPara(id);
@@ -119,7 +112,7 @@ export default function CardDeck({ onChange }: { onChange?: (frente: number) => 
           />
         ))}
       </div>
-      <div className="max-w-[20rem] text-center font-mono text-[0.71875rem] text-[#8A8172]">
+      <div className="max-w-[20rem] text-center font-mono text-2xs text-mute-1">
         clique no cartão de trás pra trazer pra frente · no da frente, clique pra virar
       </div>
     </div>

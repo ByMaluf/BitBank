@@ -23,6 +23,21 @@
   --color-mute-2: #6f695e;
   --color-mute-3: #565047;
   --color-term: #7fbf6a;
+  --color-mute-1: #8a8172;
+  --color-mute-4: #3e3a33;
+  --color-line-hover: #4a4238;
+
+  --text-3xs: 0.625rem;
+  --text-2xs: 0.71875rem;
+  --text-xs-mono: 0.78125rem;
+  --text-body-sm: 0.9375rem;
+  --text-body: 1.0625rem;
+  --text-md: 1.1875rem;
+  --text-display-sm: 2.5rem;
+  --text-display: 2.75rem;
+
+  --radius-btn: 0.625rem;
+  --radius-card: 0.875rem;
 
   --animate-blink: blink 1s steps(1) infinite;
   --animate-marquee: marquee 65s linear infinite;

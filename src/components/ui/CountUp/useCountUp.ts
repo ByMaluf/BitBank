@@ -1,37 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { useInView } from "@/components/ui/useInView";
 
-/**
- * Conta de 0 até `target` quando o elemento referenciado entra na tela; fail-open
- * (sem IntersectionObserver, já nasce no valor final). `done` vira true quando a
- * contagem termina, pra quem quiser encadear outro efeito na sequência.
- */
 export function useCountUp(target: number, duration = 1400, delay = 0) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(
-    () => (typeof IntersectionObserver === "undefined" ? target : 0),
-  );
-  const [started, setStarted] = useState(
-    () => typeof IntersectionObserver === "undefined",
-  );
-  const [done, setDone] = useState(
-    () => typeof IntersectionObserver === "undefined",
-  );
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || started) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          setStarted(true);
-          io.disconnect();
-        }
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.3 },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [started]);
+  const { ref, inView: started } = useInView<HTMLSpanElement>({ threshold: 0.3 });
+  const [value, setValue] = useState(() => (started ? target : 0));
+  const [done, setDone] = useState(started);
 
   useEffect(() => {
     if (!started) return;

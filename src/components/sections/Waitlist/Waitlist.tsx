@@ -37,17 +37,17 @@ export default function Waitlist() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="voce@dominio.dev"
-                className="max-w-[22.5rem] flex-[1_1_18.75rem] rounded-[0.625rem] border border-line-3 bg-ink-800 px-4 py-3.5 text-[0.9375rem] text-cream outline-none focus:border-gold"
+                className="max-w-[22.5rem] flex-[1_1_18.75rem] rounded-btn border border-line-3 bg-ink-800 px-4 py-2 text-sm text-cream outline-none focus:border-gold"
               />
               <button
                 type="submit"
-                className="cursor-pointer rounded-[0.625rem] bg-gold px-3.5 py-2 text-sm font-semibold text-ink-950 hover:bg-gold-hi"
+                className="cursor-pointer rounded-btn bg-gold px-3.5 py-2 text-sm font-semibold text-ink-950 hover:bg-gold-hi"
               >
                 Quero minha chave
               </button>
             </form>
           )}
-          <div className="mt-5 font-mono text-[0.71875rem] text-mute-3">
+          <div className="mt-5 font-mono text-2xs text-mute-3">
             nada de spam · cancele com um clique
           </div>
         </Reveal>

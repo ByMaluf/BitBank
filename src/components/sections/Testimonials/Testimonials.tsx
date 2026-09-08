@@ -13,8 +13,8 @@ function Card({ t }: { t: Testimonial }) {
     <div className="mr-5 flex h-36 w-[26rem] shrink-0 items-center gap-4 overflow-hidden rounded-2xl bg-[rgba(255,255,255,0.10)] p-5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[20px]">
       <img src={t.photo} alt={t.name} className="size-12 shrink-0 rounded-full object-cover" />
       <div className="min-w-0">
-        <p className="line-clamp-3 text-[0.875rem] leading-[1.45] text-cream-2">{t.quote}</p>
-        <div className="mt-2 text-[0.8125rem] font-semibold">{t.name}</div>
+        <p className="line-clamp-3 text-sm leading-[1.45] text-cream-2">{t.quote}</p>
+        <div className="mt-2 text-xs-mono font-semibold">{t.name}</div>
         <div className="font-mono text-[0.65rem] text-mute-2">{t.role}</div>
       </div>
     </div>
@@ -56,7 +56,7 @@ export default function Testimonials() {
       <div className="relative -top-10 mx-auto w-full max-w-[75rem] px-8">
         <Reveal easing="ease" className="mb-13">
           <div className="mb-4.5 font-mono text-xs tracking-[0.12em] text-gold">PESSOAS REAIS</div>
-          <h2 className="text-[2.75rem] leading-[1.06] font-bold tracking-[-0.03em]">
+          <h2 className="text-display leading-[1.06] font-bold tracking-[-0.03em]">
             Feito com quem escreve código.
           </h2>
         </Reveal>

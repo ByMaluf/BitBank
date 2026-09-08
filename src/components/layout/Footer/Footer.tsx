@@ -8,18 +8,18 @@ export default function Footer() {
           <div className="mb-4">
             <img src="/assets/logo-bitbank.svg" alt="BitBank" className="h-7 w-auto" />
           </div>
-          <p className="max-w-[34ch] text-[0.90625rem] leading-[1.6] text-mute-2">
+          <p className="max-w-[34ch] text-body-sm leading-[1.6] text-mute-2">
             O banco digital para desenvolvedores. Somos 11 pessoas em São Paulo e todas usam a conta que
             vendem.
           </p>
         </div>
         {footerColumns.map((col) => (
           <div key={col.title} className="grid content-start gap-3">
-            <div className="mb-1 font-mono text-[0.6875rem] tracking-[0.1em] text-mute-3">
+            <div className="mb-1 font-mono text-2xs tracking-[0.1em] text-mute-3">
               {col.title}
             </div>
             {col.links.map((l) => (
-              <a key={l.label} href={l.href} className="text-[0.90625rem] text-mute hover:text-gold">
+              <a key={l.label} href={l.href} className="text-body-sm text-mute hover:text-gold">
                 {l.label}
               </a>
             ))}
@@ -27,14 +27,14 @@ export default function Footer() {
         ))}
       </div>
       <div className="mx-auto flex max-w-[75rem] flex-wrap items-center justify-between gap-6 border-t border-line px-8 pt-6 pb-12">
-        <div className="font-mono text-[0.71875rem] text-mute-3">
+        <div className="font-mono text-2xs text-mute-3">
           BitBank Instituição de Pagamento S.A. · CNPJ 00.000.000/0001-00 · São Paulo, BR
         </div>
-        <div className="flex items-center gap-2 font-mono text-[0.71875rem] text-mute-3">
+        <div className="flex items-center gap-2 font-mono text-2xs text-mute-3">
           <span>criado por</span>
           <img src="/assets/assinatura-gold.svg" alt="Assinatura de Brenno Ysrael" className="h-4 w-auto opacity-90" />
         </div>
-        <div className="font-mono text-[0.71875rem] text-mute-3">© 2026 BitBank</div>
+        <div className="font-mono text-2xs text-mute-3">© 2026 BitBank</div>
       </div>
     </footer>
   );
