@@ -35,7 +35,7 @@ const Title = ({ className }: { className: string }) => (
   </h1>
 );
 
-const HERO_BG = "/assets/hero-cartoes-bg3x.png";
+const HERO_BG = "/assets/hero-cartoes-bg3x.jpg";
 
 export default function Hero({ variant = "split" }: { variant?: HeroVariant }) {
   if (variant === "centered") {
@@ -97,7 +97,7 @@ export default function Hero({ variant = "split" }: { variant?: HeroVariant }) {
             <Title className="mb-6 max-w-[15ch] text-5xl leading-[1.02] font-bold tracking-[-0.035em] md:text-[3.875rem]" />
           </Reveal>
           <Reveal delay={120}>
-            <p className="mb-9 max-w-[46ch] text-md leading-[1.55] text-mute">
+            <p className="mb-9 max-w-[46ch] text-md leading-[1.55] text-sub [text-shadow:0_2px_12px_rgba(10,9,8,0.9)]">
               Conta PF e PJ com PIX, boleto e cartão, e uma API pra tudo que você faria clicando. O que
               você gasta em AWS, GCP, Azure ou Vercel volta em bitcoin, ether ou USDC, não em pontos.
             </p>

@@ -48,7 +48,7 @@ export default function Testimonials() {
       className="relative flex min-h-screen flex-col justify-center overflow-hidden border-b border-line bg-ink-950 bg-no-repeat"
       style={{
         backgroundImage:
-          "radial-gradient(1400px 950px at 0% 0%, rgba(10,9,8,0.15) 0%, rgba(10,9,8,0.35) 30%, rgba(10,9,8,0.6) 50%, rgba(10,9,8,0.85) 70%, #0A0908 100%), url('/assets/empresa_bitbank.png')",
+          "radial-gradient(1400px 950px at 0% 0%, rgba(10,9,8,0.15) 0%, rgba(10,9,8,0.35) 30%, rgba(10,9,8,0.6) 50%, rgba(10,9,8,0.85) 70%, #0A0908 100%), url('/assets/empresa_bitbank.jpg')",
         backgroundSize: "auto, cover",
         backgroundPosition: "center, left 35%",
       }}
